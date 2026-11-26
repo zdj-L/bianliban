@@ -162,6 +162,7 @@ function wire(win: ReturnType<typeof getCurrentWindow>): void {
     "wheel",
     (event) => {
       if (!isImageZoomed()) return;
+      if (!(event instanceof WheelEvent)) return;
       event.preventDefault();
       nudgeImageZoom(event.deltaY);
     },
@@ -397,7 +398,8 @@ function clearBoardDelete(): void {
 function armBoardDelete(id: string): void {
   state.boardConfirmId = id;
   document.querySelectorAll<HTMLButtonElement>('.card [data-act="delete"]').forEach((btn) => {
-    const cardId = btn.closest(".card")?.dataset.id;
+    const card = btn.closest(".card");
+    const cardId = card instanceof HTMLElement ? card.dataset.id : undefined;
     const confirming = cardId === id;
     btn.textContent = confirming ? "确认删除" : "删除";
     btn.classList.toggle("danger", confirming);
