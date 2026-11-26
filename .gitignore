@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+
+# Frontend build
+dist/
+dist-ssr/
+dist-dev/
+
+# Rust / Tauri build
+src-tauri/target/
+src-tauri/gen/schemas
+*.exe
+*.msi
+*.nsis.zip
+*.wixpdb
+bundle/
+
+# Env and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.p12
+*.p8
+id_rsa
+id_ed25519
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Local user data and machine-only test copies
+*.db
+cards.db
+bianlitie-live/
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Caches
+.cache/
+.npm/
+.vite/
+coverage/

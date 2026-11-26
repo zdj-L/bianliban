@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图片</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="surface">
+        <header id="pin-bar" data-tauri-drag-region>
+          <span class="grip" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <h1 id="pin-title">图片</h1>
+          <button id="pin-close" type="button">关闭</button>
+        </header>
+        <div id="pin-stage">
+          <img id="pin-image" alt="" draggable="false" />
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/pin.ts"></script>
+  </body>
+</html>

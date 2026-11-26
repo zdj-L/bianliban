@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>截图</title>
+    <style>
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(20, 16, 12, 0.35);
+        overflow: hidden;
+        cursor: crosshair;
+        user-select: none;
+        font-family: "Segoe UI", "Microsoft YaHei UI", "PingFang SC", "Noto Sans SC", sans-serif;
+      }
+      #shade {
+        position: absolute;
+        inset: 0;
+        background: rgba(20, 16, 12, 0.35);
+      }
+      #rect {
+        position: absolute;
+        border: 2px solid #f4ecdf;
+        box-shadow: 0 0 0 100vmax rgba(20, 16, 12, 0.35);
+        background: transparent;
+      }
+      #hint {
+        position: absolute;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(36, 28, 22, 0.82);
+        color: #f4ecdf;
+        font-size: 14px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        pointer-events: auto;
+      }
+      #cancel {
+        border: none;
+        background: transparent;
+        color: #f4ecdf;
+        font: inherit;
+        cursor: pointer;
+        padding: 0;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="shade"></div>
+    <div id="rect" hidden></div>
+    <p id="hint">拖出一块区域<button id="cancel" type="button">取消</button><span>Esc</span></p>
+    <script type="module" src="/src/capture.ts"></script>
+  </body>
+</html>
